@@ -8,7 +8,12 @@ R='\033[0;31m'
 G='\033[0;32m'
 Y='\033[1;33m'
 VALIDATE(){
-
+    if [ $1 -ne 0 ]
+    then    
+        echo -e "$2...$R FAILURE $M"
+    else
+        echo -e  "$2.. $G SUCCESS $M"
+    fi
 }
 
 if [ USERID -ne 0 ]
@@ -26,6 +31,7 @@ do
     then
         echo -e "$i is already installed.. $Y Skipping $M"
     else
+        dnf install $i y
         echo "$i not installed.. installing"
     fi
 done
