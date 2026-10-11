@@ -5,3 +5,6 @@ start developing
 add the files to temp area
 commit the changes
 push changes to github/centralhub
+
+
+git add .; git commit -m "somemessage"; git push -u origin main
