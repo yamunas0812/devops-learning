@@ -27,11 +27,11 @@ for i in $@
 do 
     echo "Package to install: $i"
     dnf list installed $i &>>$LOGFILE
-    if [$? ne 0]
+    if [$? -ne 0]
     then
         echo -e "$i is already installed.. $Y Skipping $M"
     else
-        dnf install $i y
+        dnf install $i -y &>>$LOGFILE
         echo "$i not installed.. installing"
     fi
 done
