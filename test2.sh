@@ -2,7 +2,7 @@
 
 echo "please enter username"
 
-reah USERNAME
+read USERNAME
 
 echo "please enter password"
 
